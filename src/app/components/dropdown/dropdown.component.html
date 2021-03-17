@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <p>{{ title }}</p>
+  <select [(ngModel)]="selectedValue" (change)="onChange()">
+    <option *ngFor="let option of options | keyvalue" [ngValue]="option.key">
+      {{ option.value }}
+    </option>
+  </select>
+</div>

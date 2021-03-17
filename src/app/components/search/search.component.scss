@@ -1,0 +1,45 @@
+@import "../../breakpoints.scss";
+
+.wrapper {
+  position: relative;
+  height: 35px;
+
+  input {
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: #555;
+    padding: 3px;
+    padding-right: 60px;
+    width: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    transition: width 0.4s cubic-bezier(0, 0.795, 0, 1);
+    cursor: pointer;
+    &:focus {
+      width: 200px;
+      z-index: 1;
+      border-bottom: 1px solid #bbb;
+      background-color: #ffffff;
+      cursor: text;
+      @include breakpoint(mediumDevices) {
+        width: 500px;
+      }
+    }
+  }
+  .icon {
+    color: #555;
+    font-size: 24px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0px 8px;
+    cursor: pointer;
+    transition: opacity 0.4s ease;
+  }
+}

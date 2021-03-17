@@ -1,0 +1,21 @@
+@import "../../breakpoints.scss";
+
+ul {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #f5f5f5;
+  padding: 12px;
+  overflow: auto;
+  white-space: nowrap;
+  @include breakpoint(mediumDevices) {
+    justify-content: center;
+  }
+  li {
+    margin-right: 4px;
+    span {
+      padding: 12px;
+      cursor: pointer;
+      color: #070f6c;
+    }
+  }
+}

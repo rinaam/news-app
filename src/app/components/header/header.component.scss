@@ -1,0 +1,27 @@
+@import "../../breakpoints.scss";
+
+.wrapper {
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  @include breakpoint(mediumDevices) {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  ul {
+    display: flex;
+    li {
+      margin: 0px 4px;
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+  }
+}
+.active {
+  font-weight: 800;
+}

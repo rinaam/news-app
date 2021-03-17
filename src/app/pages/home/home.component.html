@@ -1,0 +1,26 @@
+<app-container>
+  <ul>
+    <li
+      *ngFor="let category of categories"
+      [ngStyle]="selectedCategory === category && { 'font-weight': '800' }"
+    >
+      <span (click)="selectCategory(category)">{{ category }}</span>
+    </li>
+  </ul>
+  <app-dropdown
+    [options]="countries"
+    title="Select Country"
+    [selectedValue]="country$ | async"
+    (handleChange)="selectCountry($event)"
+  ></app-dropdown>
+  <app-card
+    *ngFor="let item of (news$ | async)?.articles"
+    title="{{ item.title }}"
+    imageUrl="{{ item.urlToImage }}"
+    description="{{ item.description }}"
+    published="{{ item.publishedAt | formatDate }}"
+    source="{{ item.source.name }}"
+    author="{{ item.author }}"
+    (click)="handleClick(item.title)"
+  ></app-card>
+</app-container>

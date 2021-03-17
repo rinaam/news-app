@@ -1,0 +1,12 @@
+<app-container>
+  <img src="{{ (selectedArticle$ | async)?.urlToImage }}" />
+  <p class="title">{{ (selectedArticle$ | async)?.title }}</p>
+  <div class="header">
+    <p class="author">{{ (selectedArticle$ | async)?.author }}</p>
+    <p class="item">{{ (selectedArticle$ | async)?.source.name }}</p>
+    <p class="item">
+      {{ (selectedArticle$ | async)?.publishedAt | formatDate }}
+    </p>
+  </div>
+  <p>{{ (selectedArticle$ | async)?.content }}</p>
+</app-container>

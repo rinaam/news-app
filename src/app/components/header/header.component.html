@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <nav>
+    <ul>
+      <li *ngFor="let link of headerLinks">
+        <a [routerLink]="link.to" routerLinkActive="active">{{ link.title }}</a>
+      </li>
+    </ul>
+  </nav>
+  <app-search (keyup.enter)="onSearch($event)"></app-search>
+</div>

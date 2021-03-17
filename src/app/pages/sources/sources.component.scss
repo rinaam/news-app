@@ -1,0 +1,32 @@
+@import "../../breakpoints.scss";
+
+.wrapper {
+  max-width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 4px;
+  @include breakpoint(largeDevices) {
+    flex-wrap: wrap;
+    max-width: 1200px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 4px;
+    .first-letter {
+      font-weight: 800;
+      margin: 12px 0px;
+    }
+    li {
+      margin: 8px 0px;
+      span {
+        padding: 8px 0px;
+        cursor: pointer;
+      }
+    }
+  }
+}

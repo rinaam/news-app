@@ -1,0 +1,12 @@
+<app-container>
+  <app-card
+    *ngFor="let item of news$ | async"
+    title="{{ item.title }}"
+    imageUrl="{{ item.urlToImage }}"
+    description="{{ item.description }}"
+    published="{{ item.publishedAt | formatDate }}"
+    source="{{ item.source.name }}"
+    author="{{ item.author }}"
+    (click)="handleClick(item.title)"
+  ></app-card>
+</app-container>

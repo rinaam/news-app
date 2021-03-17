@@ -1,0 +1,18 @@
+<app-container>
+  <app-dropdown
+    title="Sort By"
+    [options]="options"
+    (handleChange)="selectSortOption($event)"
+    [selectedValue]="sortBy$ | async"
+  ></app-dropdown>
+  <app-card
+    *ngFor="let article of (news$ | async)?.articles"
+    title="{{ article.title }}"
+    imageUrl="{{ article.urlToImage }}"
+    description="{{ article.description }}"
+    published="{{ article.publishedAt | formatDate }}"
+    source="{{ article.source.name }}"
+    author="{{ article.author }}"
+    (click)="handleClick(article.title)"
+  ></app-card>
+</app-container>

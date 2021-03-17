@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div *ngFor="let letter of firstLettersArray" class="content">
+    <p class="first-letter">
+      {{ letter }}
+    </p>
+    <ul>
+      <li
+        *ngFor="
+          let source of getArrForLetter(letter, sources$ | async)
+            | removeDuplicates
+        "
+      >
+        <span
+          *ngIf="letter === source.name.charAt(0)"
+          (click)="handleClick(source.id)"
+          >{{ source.name }}</span
+        >
+      </li>
+    </ul>
+  </div>
+</div>

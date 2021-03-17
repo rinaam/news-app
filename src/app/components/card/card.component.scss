@@ -1,0 +1,64 @@
+@import "../../breakpoints.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0px;
+  cursor: pointer;
+  @include breakpoint(mediumDevices) {
+    flex-direction: row;
+    margin: 24px 8px;
+  }
+  .image {
+    box-sizing: border-box;
+    margin: 0px 0px 8px 0px;
+    @include breakpoint(mediumDevices) {
+      margin: 0px 12px 0px 0px;
+    }
+    img {
+      height: 200px;
+      width: 100%;
+
+      @include breakpoint(mediumDevices) {
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+  .content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0px 4px;
+    @include breakpoint(mediumDevices) {
+      width: 900px;
+      padding: 4px;
+    }
+
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
+      @include breakpoint(mediumDevices) {
+        flex-direction: row;
+      }
+      .author {
+        color: #188fff;
+        font-weight: 700;
+        margin-right: 8px;
+      }
+      .item {
+        color: #959595;
+        margin-right: 8px;
+      }
+    }
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .description {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

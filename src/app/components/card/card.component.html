@@ -1,0 +1,16 @@
+<div class="wrapper" *ngIf="imageUrl">
+  <div class="image">
+    <img src="{{ imageUrl }}" />
+  </div>
+  <div class="content">
+    <div class="card-header">
+      <p class="author">{{ author ? author : "Unknown author" }}</p>
+      <p class="item">{{ source }}</p>
+      <p class="item">{{ published }}</p>
+    </div>
+    <p class="card-title">{{ title }}</p>
+    <p class="description">
+      {{ description }}
+    </p>
+  </div>
+</div>
